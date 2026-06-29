@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dedicated Technical Partner Proposal</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg2: #111827;
+      --card: #ffffff;
+      --muted-card: #f8fafc;
+      --text: #111827;
+      --muted: #64748b;
+      --line: #e5e7eb;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #16a34a;
+      --warn: #f59e0b;
+      --danger: #dc2626;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #f1f5f9;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .hero {
+      color: white;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.9), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(22,163,74,0.55), transparent 26%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      padding: 34px 20px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      right: -190px;
+      top: -120px;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 66px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #60a5fa, #22c55e);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(37,99,235,0.45);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.94);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.20);
+      color: #bfdbfe;
+      border: 1px solid rgba(147,197,253,0.25);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34,197,94,0.16);
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 0.98;
+      margin: 0 0 24px;
+      letter-spacing: -0.055em;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #cbd5e1;
+      margin: 0 0 28px;
+      max-width: 720px;
+    }
+
+    .hero strong { color: white; }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      border: 0;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #0f172a;
+      box-shadow: 0 18px 36px rgba(255,255,255,0.12);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .quote-card {
+      background: rgba(255,255,255,0.98);
+      color: var(--text);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.26);
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+
+    .price-label {
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+    }
+
+    .price {
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin: 10px 0 6px;
+      font-weight: 950;
+    }
+
+    .price span {
+      font-size: 18px;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .value-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .value-item {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--muted-card);
+    }
+
+
+
+    /* Fix: keep benefit-card text readable on white cards */
+    .quote-card,
+    .quote-card .value-item,
+    .quote-card .value-item strong {
+      color: var(--text);
+    }
+
+    .quote-card .value-item .muted {
+      color: var(--muted);
+    }
+
+    .check {
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: #15803d;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    main { margin-top: -42px; position: relative; z-index: 4; }
+
+    section { padding: 34px 20px; }
+
+    .section-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px;
+      border: 1px solid rgba(226,232,240,0.8);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+
+    .section-head p, .muted { color: var(--muted); margin: 8px 0 0; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, #f8fafc);
+      min-height: 150px;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: #eff6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .feature h3, .timeline h3, .calc-card h3 { margin: 0 0 8px; font-size: 18px; }
+    .feature p, .timeline p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--muted);
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .timeline-wrap {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .phase-list {
+      display: grid;
+      gap: 10px;
+      position: sticky;
+      top: 18px;
+    }
+
+    .phase-btn {
+      text-align: left;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      cursor: pointer;
+      font-weight: 850;
+      color: #334155;
+    }
+
+    .phase-btn small { display: block; color: var(--muted); margin-top: 4px; font-weight: 650; }
+    .phase-btn.active { background: #eff6ff; border-color: #bfdbfe; color: var(--primary-dark); }
+
+    .timeline {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      background: #fff;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--muted-card);
+    }
+
+    .mini-card strong { display: block; margin-bottom: 4px; }
+    .mini-card span { color: var(--muted); font-size: 14px; }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .compare-card {
+      border-radius: 22px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: var(--muted-card);
+    }
+
+    .compare-card.highlight {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+      border-color: #bfdbfe;
+    }
+
+    .big-num {
+      font-size: 38px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      margin: 8px 0;
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .scope-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      background: #fff;
+    }
+
+    .scope-card h3 { margin-top: 0; }
+    .scope-card ul { margin: 0; padding-left: 20px; color: #334155; }
+    .scope-card li { margin: 8px 0; }
+
+    .included { border-top: 5px solid var(--accent); }
+    .separate { border-top: 5px solid var(--warn); }
+
+    .calculator {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .calc-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      background: #fff;
+    }
+
+    label { display: block; font-weight: 800; margin: 14px 0 6px; }
+    input[type="range"] { width: 100%; }
+
+    .output {
+      background: #0f172a;
+      color: white;
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .output .muted { color: #cbd5e1; }
+    .savings { color: #86efac; font-size: 42px; font-weight: 950; letter-spacing: -0.05em; }
+
+    .team-builder {
+      display: grid;
+      gap: 14px;
+    }
+
+    .team-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr auto;
+      gap: 14px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: #f8fafc;
+    }
+
+    .team-role strong { display: block; color: #0f172a; }
+    .team-role span { display: block; color: #64748b; font-size: 13px; margin-top: 4px; line-height: 1.35; }
+
+    .team-cost { font-weight: 900; color: #334155; }
+
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      padding: 5px;
+    }
+
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-weight: 950;
+      cursor: pointer;
+    }
+
+    .qty-btn:hover { background: #cbd5e1; }
+    .qty-number { min-width: 24px; text-align: center; font-weight: 950; color: #0f172a; }
+
+    .team-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .summary-pill {
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .summary-pill span { display: block; color: #cbd5e1; font-size: 12px; font-weight: 700; }
+    .summary-pill strong { display: block; color: white; font-size: 20px; margin-top: 4px; }
+
+    @media (max-width: 720px) {
+      .team-row { grid-template-columns: 1fr; }
+      .team-summary { grid-template-columns: 1fr; }
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      border: 0;
+      background: #fff;
+      padding: 18px;
+      text-align: left;
+      font-weight: 850;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .25s ease;
+      color: var(--muted);
+      padding: 0 18px;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 220px;
+      padding-bottom: 18px;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      border-radius: 30px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+    }
+
+    .final-cta p { color: #cbd5e1; max-width: 780px; margin: 14px auto 26px; }
+
+    .print-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 24px;
+    }
+
+
+
+    .tool-layout {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .tool-menu {
+      display: grid;
+      gap: 10px;
+      position: sticky;
+      top: 18px;
+    }
+
+    .tool-btn {
+      text-align: left;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: #334155;
+      padding: 14px 16px;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 850;
+      transition: 0.2s ease;
+    }
+
+    .tool-btn small { display: block; margin-top: 4px; color: var(--muted); font-weight: 650; }
+    .tool-btn:hover { transform: translateY(-1px); border-color: #bfdbfe; }
+    .tool-btn.active { background: #eff6ff; color: var(--primary-dark); border-color: #bfdbfe; }
+
+    .tool-panel {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #ffffff;
+      padding: 26px;
+    }
+
+    .tool-panel h3 { margin: 0 0 8px; font-size: 24px; letter-spacing: -0.02em; }
+    .tool-panel p { margin: 0; color: var(--muted); }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .tool-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--muted-card);
+    }
+
+    .tool-card strong { display: block; margin-bottom: 4px; color: #111827; }
+    .tool-card span { display: block; color: var(--muted); font-size: 14px; }
+
+    .ai-strip {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .ai-chip {
+      border: 1px solid #bfdbfe;
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+      color: #1e293b;
+      border-radius: 16px;
+      padding: 14px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .timeline-wrap, .compare, .scope-grid, .calculator, .tool-layout { grid-template-columns: 1fr; }
+      .grid-3, .tool-grid, .ai-strip { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; margin-bottom: 40px; }
+      .quote-card { padding: 22px; }
+      .section-card { padding: 24px; }
+      .section-head { display: block; }
+      .phase-list { position: static; }
+      .timeline-grid { grid-template-columns: 1fr; }
+      main { margin-top: -30px; }
+    }
+
+    @media print {
+      .hero { padding-bottom: 30px; }
+      main { margin-top: 0; }
+      .btn, .tabs, .phase-list, .faq-q span:last-child { display: none; }
+      section { padding: 12px; }
+      .section-card, .quote-card, .final-cta { box-shadow: none; }
+      .timeline-wrap { grid-template-columns: 1fr; }
+      .faq-a { max-height: none !important; padding-bottom: 14px !important; }
+    }
+
+
+    /* Strong readability override for the price card inside the dark hero */
+    .hero .quote-card { color: #111827 !important; }
+    .hero .quote-card *:not(.btn):not(.check) { color: inherit; }
+    .hero .quote-card .muted,
+    .hero .quote-card .value-item span.muted,
+    .hero .quote-card p.muted { color: #475569 !important; }
+    .hero .quote-card .value-item strong { color: #111827 !important; }
+  
+    .price-note {
+      margin-top: 6px;
+      margin-bottom: 16px;
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #047857;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid #a7f3d0;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <nav class="nav">
+        <div class="brand"><div class="logo">A</div><div>Dedicated Technical Partner Proposal</div></div>
+        <div class="nav-actions">
+          <a class="pill" href="#services">Services</a>
+          <a class="pill" href="#future-tools">Future Tools + AI</a>
+          <a class="pill" href="#technical-ops">Security & Servers</a>
+          <a class="pill" href="#scope">Scope</a>
+          <a class="pill" href="#pricing">Pricing</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Monthly Technical Partner Model</div>
+          <h1>Dedicated developer availability without hiring full-time.</h1>
+          <p>
+            For dedicated technical availability across business tools, automation, AI workflows, backend/frontend work, integrations, server management, security, and long-term technical ownership, the recommended monthly retainer is <strong>₹1.4L/month</strong>. Final pricing can be adjusted based on scope, workload, and monthly priorities.
+          </p>
+          <p style="margin-top:14px; font-weight:700; color:#dbeafe;">Work is managed through a monthly priority list, so the focus stays on useful business output instead of scattered tasks.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#pricing">View Offer →</a>
+            <button class="btn btn-outline" onclick="window.print()">Print / Save PDF</button>
+          </div>
+        </div>
+
+        <aside class="quote-card" id="pricing">
+          <div class="price-label">Dedicated Technical Partner Plan</div>
+          <div class="price">₹1,40,000 <span>/ month</span></div>
+          <div class="price-note">Final pricing can be adjusted based on scope and workload</div>
+          <p class="muted" style="color:#475569 !important;">For regular development, business tools, automation, reports, integrations, bug fixes, deployment support, server management, security improvements, and ongoing technical operations.</p>
+          <div class="value-list">
+            <div class="value-item"><div class="check">✓</div><div><strong style="color:#111827 !important;">Predictable monthly cost</strong><br><span class="muted" style="color:#475569 !important;">Clear retainer instead of unpredictable project quotations.</span></div></div>
+            <div class="value-item"><div class="check">✓</div><div><strong style="color:#111827 !important;">Weekly task planning</strong><br><span class="muted" style="color:#475569 !important;">We maintain priorities and keep delivering useful work continuously.</span></div></div>
+            <div class="value-item"><div class="check">✓</div><div><strong style="color:#111827 !important;">Technical ownership</strong><br><span class="muted" style="color:#475569 !important;">One reliable person who understands the business and systems.</span></div></div>
+          </div>
+          <a class="btn btn-primary" style="width:100%; background:#2563eb; color:white;" href="#next-step">Start With First Month</a>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>What this monthly model covers</h2>
+            <p>Instead of hiring a full-time developer or managing multiple freelancers, you get continuous technical capacity every month.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="feature"><div class="feature-icon">⚙️</div><h3>Business Tools</h3><p>Build practical company tools phase-wise: inventory, CRM, approvals, reporting, admin panels, internal workflows, and ERP-style modules when needed.</p></div>
+          <div class="feature"><div class="feature-icon">🤖</div><h3>Automation & Scraping</h3><p>Data extraction, Excel reports, automated workflows, catalogue updates, competitor tracking, and recurring business reports.</p></div>
+          <div class="feature"><div class="feature-icon">🔌</div><h3>APIs & Integrations</h3><p>Backend/frontend changes, third-party API integrations, admin panels, payment/notification tools, and internal dashboards.</p></div>
+          <div class="feature"><div class="feature-icon">🛠️</div><h3>Bug Fixing</h3><p>Regular fixes, improvements, performance tuning, small feature changes, and stability support for existing systems.</p></div>
+          <div class="feature"><div class="feature-icon">🚀</div><h3>Deployment & DevOps</h3><p>Deployment assistance, release process, environment setup, CI/CD basics, server coordination, and technical troubleshooting.</p></div>
+          <div class="feature"><div class="feature-icon">📊</div><h3>Reporting Systems</h3><p>Excel/PDF reports, business dashboards, sales reports, inventory reports, payment due reports, and data cleanup.</p></div>
+          <div class="feature"><div class="feature-icon">📦</div><h3>Inventory & Stock Workflows</h3><p>Advanced inventory, warehouse-wise stock, batch/lot tracking, stock transfer, low-stock alerts, barcode/QR workflows, and stock reports.</p></div>
+          <div class="feature"><div class="feature-icon">✅</div><h3>Approvals & Activity Logs</h3><p>Discount approval, purchase approval, order approval, role-based access, staff accountability, and activity history for important actions.</p></div>
+          <div class="feature"><div class="feature-icon">💬</div><h3>Notifications & Reminders</h3><p>WhatsApp/email alerts for orders, payments, low stock, follow-ups, dispatch, internal reminders, and task updates.</p></div>
+          <div class="feature"><div class="feature-icon">🔐</div><h3>Security Management</h3><p>Access control, permission review, SSL, secure configuration, basic vulnerability checks, backups, and safer deployment practices.</p></div>
+          <div class="feature"><div class="feature-icon">🖥️</div><h3>Server Management</h3><p>Linux server setup, Nginx/Apache, Docker services, domains, SSL, logs, monitoring, cron jobs, backups, and troubleshooting.</p></div>
+          <div class="feature"><div class="feature-icon">📈</div><h3>Performance & Maintenance</h3><p>Speed improvements, database optimization, error monitoring, uptime checks, cleanup, version updates, and stability improvements.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="future-tools">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>Future tools and AI automations the company can build</h2>
+            <p>This retainer is not limited to one scraper or one ERP project. It can become a long-term technology roadmap for reducing manual work, improving operations, and adding AI where it actually helps.</p>
+          </div>
+        </div>
+
+        <div class="tool-layout">
+          <div class="tool-menu">
+            <button class="tool-btn active" data-tool="0">Business Operations <small>CRM, inventory, approvals, ERP-style tools</small></button>
+            <button class="tool-btn" data-tool="1">Sales & Customer Tools <small>Leads, follow-ups, quotations</small></button>
+            <button class="tool-btn" data-tool="2">Data & Reporting <small>Dashboards, Excel, insights</small></button>
+            <button class="tool-btn" data-tool="3">AI Automations <small>Assistants, summaries, alerts</small></button>
+            <button class="tool-btn" data-tool="4">Integrations <small>WhatsApp, Tally, payment, courier</small></button>
+            <button class="tool-btn" data-tool="5">Technical Ops <small>Security, servers, backups, monitoring</small></button>
+          </div>
+
+          <div class="tool-panel" id="toolContent"></div>
+        </div>
+
+        <div class="ai-strip">
+          <div class="ai-chip">AI report summaries</div>
+          <div class="ai-chip">Auto Excel generation</div>
+          <div class="ai-chip">Smart stock alerts</div>
+          <div class="ai-chip">WhatsApp task reminders</div>
+          <div class="ai-chip">Server health alerts</div>
+          <div class="ai-chip">Security checklist automation</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="technical-ops">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>Technical operations, server management, and security</h2>
+            <p>Along with building tools, I can help keep the company systems stable, secure, monitored, and easier to maintain.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="feature"><div class="feature-icon">🖥️</div><h3>Server Setup & Management</h3><p>Linux server setup, Nginx/Apache configuration, Docker deployments, environment variables, domain mapping, SSL, and service troubleshooting.</p></div>
+          <div class="feature"><div class="feature-icon">🔐</div><h3>Security Hardening</h3><p>SSL, firewall basics, SSH access control, permission review, sensitive config cleanup, secure headers, admin access review, and safer release practices.</p></div>
+          <div class="feature"><div class="feature-icon">💾</div><h3>Backups & Recovery</h3><p>Database backups, file backups, restore testing, backup scheduling, disaster recovery planning, and safer production-change practices.</p></div>
+          <div class="feature"><div class="feature-icon">📡</div><h3>Monitoring & Alerts</h3><p>Uptime checks, error logs, failed job alerts, disk/RAM/CPU monitoring, SSL expiry reminders, and monthly health reports.</p></div>
+          <div class="feature"><div class="feature-icon">⚡</div><h3>Performance Optimization</h3><p>Slow page/API review, database indexing suggestions, caching, image optimization, query improvements, and frontend/backend speed tuning.</p></div>
+          <div class="feature"><div class="feature-icon">🧰</div><h3>Maintenance & Updates</h3><p>Dependency updates, bug fixes, cleanup, version upgrades, cron/job checks, queue/worker troubleshooting, and technical documentation.</p></div>
+          <div class="feature"><div class="feature-icon">🚢</div><h3>Deployment Process</h3><p>Staging/production workflow, release checklist, rollback planning, Git-based deployment, Docker compose support, and environment separation.</p></div>
+          <div class="feature"><div class="feature-icon">🧾</div><h3>Compliance-Ready Practices</h3><p>Audit logs, user roles, access history, data export controls, activity tracking, and structured records for internal accountability.</p></div>
+          <div class="feature"><div class="feature-icon">🤖</div><h3>AI-Ops Possibilities</h3><p>AI-assisted log summaries, automated issue reports, smart alerts, support-ticket summaries, data anomaly checks, and recurring status summaries.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>Why this is better than building an in-house tech team immediately</h2>
+            <p>For tools, automation, integrations, reports, AI workflows, deployment, security, and server management, one full-time developer is often not enough. A small internal setup usually needs senior ownership, execution support, and occasional DevOps/security help.</p>
+          </div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-card">
+            <h3>Small in-house tech setup</h3>
+            <div class="big-num">₹2L–₹3.5L+/month</div>
+            <ul class="mini-list">
+              <li><strong>Senior developer / tech lead:</strong> ₹1.2L–₹2L/month</li>
+              <li><strong>Junior developer:</strong> ₹50k–₹75k/month</li>
+              <li><strong>DevOps / server / security support:</strong> ₹50k–₹85k/month</li>
+              <li><strong>Extra overhead:</strong> hiring, onboarding, HR, leaves, management, office/tools</li>
+            </ul>
+            <p class="muted">Even after hiring, the company still needs time for onboarding, process setup, supervision, and technical direction.</p>
+          </div>
+          <div class="compare-card highlight">
+            <h3>Dedicated technical partner retainer</h3>
+            <div class="big-num">₹1.4L/month</div>
+            <div class="price-note">Adjustable based on monthly scope</div>
+            <p class="muted">Senior-led technical capacity for business tools, automation, scraping, reports, backend/frontend work, AI workflows, integrations, server management, security improvements, deployment support, and ongoing maintenance.</p>
+            <p class="muted"><strong>Best fit:</strong> before building a full internal tech team, this gives the company reliable technical ownership and predictable monthly cost.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="freelancer-comparison">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>Why this is better than managing multiple freelancers</h2>
+            <p>Freelancers are useful for one-time tasks, but business systems need continuity, ownership, and long-term planning. When every task goes to a different person, work can become scattered and harder to maintain.</p>
+          </div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-card">
+            <h3>Multiple freelancers</h3>
+            <div class="big-num">Scattered ownership</div>
+            <ul class="mini-list">
+              <li><strong>Different person for every task:</strong> repeated explanation and context loss</li>
+              <li><strong>No single technical owner:</strong> website, reports, server, tools, and automations become disconnected</li>
+              <li><strong>Inconsistent quality:</strong> different coding styles, weak documentation, and higher rework risk</li>
+              <li><strong>Slow future changes:</strong> every new freelancer first needs to understand old work</li>
+              <li><strong>Security and server gaps:</strong> unclear responsibility for backups, access, monitoring, and maintenance</li>
+            </ul>
+            <p class="muted">This can work for small isolated tasks, but it becomes risky when the company starts depending on custom tools, automation, integrations, and reports.</p>
+          </div>
+
+          <div class="compare-card highlight">
+            <h3>Dedicated technical partner</h3>
+            <div class="big-num">Consistent ownership</div>
+            <p class="muted">One technical partner understands the business, existing tools, data, server setup, workflows, and future requirements.</p>
+            <ul class="mini-list">
+              <li><strong>Better continuity:</strong> each month builds on previous work</li>
+              <li><strong>Faster execution:</strong> less repeated explanation and faster changes</li>
+              <li><strong>Cleaner planning:</strong> tools, reports, APIs, AI workflows, and servers are handled together</li>
+              <li><strong>Lower hidden cost:</strong> less rework, fewer handovers, and better documentation</li>
+              <li><strong>Long-term improvement:</strong> systems can be improved step by step as business grows</li>
+            </ul>
+            <p class="muted"><strong>Best fit:</strong> flexibility of freelancing with the ownership and continuity of an in-house technical team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="first-month">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>How the first month works</h2>
+            <p>The first month is designed to create useful output immediately while also setting a clean technical direction for future work.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="feature"><div class="feature-icon">🎯</div><h3>Quick-win delivery</h3><p>Complete practical tasks that give immediate value, such as data extraction, Excel reports, small automations, fixes, dashboards, or workflow improvements.</p></div>
+          <div class="feature"><div class="feature-icon">🧭</div><h3>Workflow understanding</h3><p>Understand the company’s business process, repeated manual work, current tools, reporting needs, server setup, and operational gaps.</p></div>
+          <div class="feature"><div class="feature-icon">🗂️</div><h3>Priority task list</h3><p>Create a clear task list for business tools, automation, reports, integrations, AI workflows, security improvements, and server management.</p></div>
+          <div class="feature"><div class="feature-icon">🧱</div><h3>Technical foundation</h3><p>Set a better structure for code, data, deployment, access, backups, documentation, and future changes so work does not become scattered.</p></div>
+          <div class="feature"><div class="feature-icon">📊</div><h3>Useful roadmap</h3><p>Prepare a practical roadmap showing what can be built next: internal tools, CRM, inventory workflows, customer/vendor systems, dashboards, and AI automations.</p></div>
+          <div class="feature"><div class="feature-icon">🤝</div><h3>Monthly working rhythm</h3><p>Set up a simple weekly review process: decide priorities, deliver tasks, review progress, and adjust scope based on business value.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scope">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>Clear scope, no confusion</h2>
+            <p>This is dedicated monthly technical capacity, not unlimited development. Work is handled through an agreed task list, clear priorities, and monthly scope review.</p>
+          </div>
+        </div>
+
+        <div class="scope-grid">
+          <div class="scope-card included">
+            <h3>Included in monthly retainer</h3>
+            <ul>
+              <li>Business tools and ERP-style module development</li>
+              <li>Automation and data scraping tasks</li>
+              <li>Excel/PDF reports and dashboards</li>
+              <li>Backend/frontend changes</li>
+              <li>API integrations</li>
+              <li>Bug fixing and improvements</li>
+              <li>Deployment and technical support</li>
+              <li>Server management and troubleshooting</li>
+              <li>Security checks and access review</li>
+              <li>Backup, monitoring, and maintenance planning</li>
+              <li>Performance improvements and system stability work</li>
+              <li>Weekly task planning, priority review, and progress updates</li>
+              <li>Future business tools and AI automation planning</li>
+              <li>First-month workflow review and practical technical roadmap</li>
+            </ul>
+          </div>
+
+          <div class="scope-card separate">
+            <h3>Separate if required</h3>
+            <ul>
+              <li>Hosting/server costs</li>
+              <li>Paid APIs, tools, plugins, or subscriptions</li>
+              <li>Additional developers, designers, or testers</li>
+              <li>Urgent night/weekend work</li>
+              <li>Very large new modules outside agreed priorities</li>
+              <li>Mobile apps or complex third-party integrations</li>
+              <li>24/7 production support unless agreed separately</li>
+              <li>Cybersecurity audit/certification by third-party security agency</li>
+              <li>Legal, accounting, or compliance services</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>Interactive team cost calculator</h2>
+            <p>Build a realistic in-house tech setup by adding/removing roles, then compare it with the monthly retainer.</p>
+          </div>
+        </div>
+
+        <div class="calculator">
+          <div class="calc-card">
+            <h3>Build your in-house team estimate</h3>
+            <div class="team-builder" id="teamBuilder"></div>
+
+            <label for="overhead">Hiring, management, HR, leave & onboarding overhead: <span id="overheadLabel">20%</span></label>
+            <input type="range" id="overhead" min="0" max="40" step="5" value="20" />
+            <p class="muted">This is an estimate to show why a retainer can be easier than hiring and managing a small technical team immediately.</p>
+          </div>
+          <div class="output">
+            <div class="muted">Estimated monthly saving with retainer</div>
+            <div class="savings" id="saving">₹1,40,000</div>
+            <p class="muted" id="calcText">Estimated in-house setup cost: ₹2,80,000 vs retainer: ₹1,40,000.</p>
+            <div class="team-summary">
+              <div class="summary-pill"><span>Selected team</span><strong id="teamCount">3 roles</strong></div>
+              <div class="summary-pill"><span>Base team cost</span><strong id="baseCost">₹2,33,000</strong></div>
+              <div class="summary-pill"><span>With overhead</span><strong id="totalCost">₹2,80,000</strong></div>
+            </div>
+            <p class="muted" style="margin-top:16px;">The retainer gives flexible technical capacity without recruitment, payroll, replacement risk, and coordination overhead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <h2>Common questions</h2>
+            <p>Answers that keep expectations clear before starting.</p>
+          </div>
+        </div>
+
+        <div class="faq-item open">
+          <button class="faq-q">Is this unlimited work? <span>+</span></button>
+          <div class="faq-a">No. This is dedicated monthly technical capacity for agreed tasks and priorities. We maintain a task list, review priorities regularly, and work through it based on business value. Very large new scope or urgent out-of-hours work can be discussed separately.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can ERP also be built under this model? <span>+</span></button>
+          <div class="faq-a">Yes. ERP can be one part of the monthly roadmap, but the retainer is broader than ERP. Each month can focus on the most useful priority: automation, reports, scraping, admin tools, CRM, integrations, AI workflows, or ERP-style modules like inventory, sales, purchase, invoices, payments, and approvals.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What other tools can be built in future? <span>+</span></button>
+          <div class="faq-a">Future tools can include CRM, quotations, inventory alerts, customer/vendor portals, auto reports, WhatsApp reminders, AI summaries, AI data cleanup, dashboards, Tally/GST exports, payment tracking, and internal approval workflows.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can security and server management be included? <span>+</span></button>
+          <div class="faq-a">Yes. Server management, deployments, backups, logs, monitoring, SSL, access review, basic security hardening, performance improvements, and maintenance can be included as monthly priorities. External hosting costs, paid tools, and formal cybersecurity audits are separate.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do we start? <span>+</span></button>
+          <div class="faq-a">Start month-to-month with a clear task list and priority plan. The first month focuses on quick wins, workflow understanding, current technical gaps, and a practical roadmap for tools, automation, integrations, security, server management, and AI workflows.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can the plan continue or change later? <span>+</span></button>
+          <div class="faq-a">Yes. The retainer can continue monthly based on workload. Scope and priorities can be reviewed each month so the engagement stays practical and useful.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="next-step">
+      <div class="container final-cta">
+        <h2>Suggested next step</h2>
+        <p>Start with a monthly dedicated technical retainer. In the first month, we complete useful tasks, understand requirements, and prepare a practical roadmap for business tools, automation, integrations, security, server management, and AI workflows. This retainer gives you the flexibility of freelancing with the continuity and ownership of an in-house technical team — without the cost and complexity of building a full team immediately.</p>
+        <a class="btn btn-primary" href="mailto:?subject=Dedicated Technical Partner Proposal&body=Hi, I would like to discuss the Dedicated Technical Partner Proposal for ₹1,40,000/month, with final pricing adjustable based on scope.">Discuss Proposal</a>
+      </div>
+      <div class="print-note">Prepared as an interactive client proposal. Use “Print / Save PDF” to share as PDF.</div>
+    </section>
+  </main>
+
+  <script>
+
+    const tools = [
+      {
+        title: "Business Operations Tools",
+        desc: "Systems that help the company manage daily work with fewer manual mistakes and better visibility.",
+        items: [
+          ["Internal business system", "Products, customers, vendors, purchase, sales, invoices, payments, inventory, and reports when needed."],
+          ["Inventory control", "Low-stock alerts, warehouse-wise stock, stock movement, batch/lot tracking, and barcode/QR support."],
+          ["Approval workflows", "Purchase approval, discount approval, payment approval, role-based access, and activity logs."],
+          ["Internal task system", "Assign work to staff, track status, deadlines, priorities, and team accountability."]
+        ]
+      },
+      {
+        title: "Sales & Customer Tools",
+        desc: "Tools to improve sales follow-up, customer handling, quotations, and repeat business.",
+        items: [
+          ["CRM and lead tracking", "Lead source, follow-up reminders, call notes, status pipeline, and conversion tracking."],
+          ["Quotation system", "Create quotations, convert to order/invoice, manage discounts, and share PDF with customers."],
+          ["Customer portal", "Customers can view orders, invoices, payment status, dispatch status, and documents."],
+          ["Follow-up automation", "Auto reminders for pending payments, inactive customers, repeat orders, and missed follow-ups."]
+        ]
+      },
+      {
+        title: "Data, Reporting & Dashboard Tools",
+        desc: "Reliable reporting systems so owners can see the actual business position without manual Excel work.",
+        items: [
+          ["Auto Excel/PDF reports", "Daily/weekly/monthly sales, stock, purchase, due payments, and performance reports."],
+          ["Business dashboards", "Revenue, orders, stock value, profit indicators, top products, slow-moving items, and dues."],
+          ["Competitor/catalogue tracking", "Scrape product prices, availability, catalogue changes, and generate comparison reports."],
+          ["Data cleanup tools", "Duplicate detection, SKU mapping, product normalization, missing field reports, and validation checks."]
+        ]
+      },
+      {
+        title: "AI Automations",
+        desc: "AI can be added step by step where it gives practical value, not as a gimmick.",
+        items: [
+          ["AI report assistant", "Summarize sales, stock, dues, and business trends in simple language for management."],
+          ["AI document processing", "Read invoices, purchase bills, product lists, PDFs, and convert them into structured business data."],
+          ["AI support assistant", "Internal chatbot for staff to ask about orders, stock, customers, invoices, and process steps."],
+          ["AI alerts and suggestions", "Detect unusual price changes, low stock risk, delayed payments, repeated issues, and missed follow-ups."]
+        ]
+      },
+      {
+        title: "Integrations & Automation Connectors",
+        desc: "Connect business systems so data flows automatically instead of being copied manually.",
+        items: [
+          ["WhatsApp/SMS/email", "Order updates, payment reminders, stock alerts, quotation sharing, and task reminders."],
+          ["Tally/GST export", "Sales/purchase reports, tax summaries, invoice export, and accounting-ready data."],
+          ["Payment/courier APIs", "Payment status sync, courier tracking, dispatch updates, and delivery notifications."],
+          ["Website/admin/API integrations", "Connect website, admin panel, catalogue, CRM, vendor/customer portals, ERP-style systems, and third-party tools."]
+        ]
+      },
+      {
+        title: "Technical Ops, Security & Server Management",
+        desc: "Keep the company systems stable, secure, backed up, monitored, and easier to maintain.",
+        items: [
+          ["Server management", "Linux, Nginx/Apache, Docker, domains, SSL, environment setup, cron jobs, logs, and service troubleshooting."],
+          ["Security practices", "Access review, permissions, SSH/firewall basics, secure configs, backups, SSL checks, and safer deployment practices."],
+          ["Monitoring & maintenance", "Uptime checks, error monitoring, disk/RAM/CPU checks, SSL expiry reminders, updates, and monthly health reports."],
+          ["Deployment support", "Staging/production workflow, release checklist, rollback planning, Git-based deployment, and environment separation."]
+        ]
+      }
+    ];
+
+    const toolContent = document.getElementById('toolContent');
+    const toolButtons = document.querySelectorAll('.tool-btn');
+
+    function renderTool(index) {
+      const t = tools[index];
+      toolContent.innerHTML = `
+        <h3>${t.title}</h3>
+        <p>${t.desc}</p>
+        <div class="tool-grid">
+          ${t.items.map(item => `<div class="tool-card"><strong>${item[0]}</strong><span>${item[1]}</span></div>`).join('')}
+        </div>
+      `;
+      toolButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.tool == index));
+    }
+
+    toolButtons.forEach(btn => btn.addEventListener('click', () => renderTool(btn.dataset.tool)));
+    renderTool(0);
+
+
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
+    });
+
+    const overhead = document.getElementById('overhead');
+    const overheadLabel = document.getElementById('overheadLabel');
+    const saving = document.getElementById('saving');
+    const calcText = document.getElementById('calcText');
+    const teamBuilder = document.getElementById('teamBuilder');
+    const teamCount = document.getElementById('teamCount');
+    const baseCost = document.getElementById('baseCost');
+    const totalCost = document.getElementById('totalCost');
+    const retainer = 140000;
+
+    const teamRoles = [
+      { key: 'senior', title: 'Senior developer / tech lead', note: 'Architecture, planning, backend, integrations, quality, ownership.', cost: 180000, qty: 1 },
+      { key: 'junior', title: 'Junior / mid developer', note: 'UI changes, reports, smaller modules, testing support, routine fixes.', cost: 65000, qty: 1 },
+      { key: 'devops', title: 'DevOps / server / security support', note: 'Deployments, SSL, backups, monitoring, security hardening, troubleshooting.', cost: 67500, qty: 1 },
+      { key: 'uiux', title: 'UI/UX designer', note: 'Screens, workflows, dashboards, forms, product usability improvements.', cost: 60000, qty: 0 },
+      { key: 'qa', title: 'QA / tester', note: 'Testing, bug reports, release checks, regression testing, user-flow validation.', cost: 50000, qty: 0 },
+      { key: 'pm', title: 'Project coordinator / manager', note: 'Task planning, follow-ups, documentation, coordination, delivery tracking.', cost: 75000, qty: 0 }
+    ];
+
+    function money(n) {
+      return '₹' + Math.round(n).toLocaleString('en-IN');
+    }
+
+    function renderTeamBuilder() {
+      teamBuilder.innerHTML = teamRoles.map((role, i) => `
+        <div class="team-row">
+          <div class="team-role"><strong>${role.title}</strong><span>${role.note}</span></div>
+          <div class="team-cost">${money(role.cost)}/month each</div>
+          <div class="qty-control" aria-label="Quantity for ${role.title}">
+            <button type="button" class="qty-btn" data-index="${i}" data-action="minus">−</button>
+            <span class="qty-number" id="qty-${role.key}">${role.qty}</span>
+            <button type="button" class="qty-btn" data-index="${i}" data-action="plus">+</button>
+          </div>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = Number(btn.dataset.index);
+          const action = btn.dataset.action;
+          if (action === 'plus') teamRoles[index].qty = Math.min(teamRoles[index].qty + 1, 5);
+          if (action === 'minus') teamRoles[index].qty = Math.max(teamRoles[index].qty - 1, 0);
+          renderTeamBuilder();
+          updateCalc();
+        });
+      });
+    }
+
+    function updateCalc() {
+      const o = Number(overhead.value);
+      const base = teamRoles.reduce((sum, role) => sum + role.cost * role.qty, 0);
+      const total = base + (base * o / 100);
+      const selectedPeople = teamRoles.reduce((sum, role) => sum + role.qty, 0);
+      const selectedRoles = teamRoles.filter(role => role.qty > 0).length;
+      const diff = total - retainer;
+
+      overheadLabel.textContent = o + '%';
+      saving.textContent = money(diff > 0 ? diff : 0);
+      calcText.textContent = `Estimated in-house team cost: ${money(total)} vs retainer: ${money(retainer)}.`;
+      teamCount.textContent = `${selectedPeople} person${selectedPeople === 1 ? '' : 's'} / ${selectedRoles} role${selectedRoles === 1 ? '' : 's'}`;
+      baseCost.textContent = money(base);
+      totalCost.textContent = money(total);
+    }
+
+    overhead.addEventListener('input', updateCalc);
+    renderTeamBuilder();
+    updateCalc();
+  </script>
+</body>
+</html>
