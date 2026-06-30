@@ -3,681 +3,1075 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI-Infused CRM for Furniture Manufacturers</title>
-  <meta name="description" content="AI-powered CRM pitch page for furniture manufacturers: leads, quotations, production tracking, delivery updates, and customer service." />
+  <title>AI CRM & Operations Hub for Starwood Modular</title>
+  <meta name="description" content="Client-facing discussion proposal for an AI CRM and operations hub for Starwood Modular." />
   <style>
     :root {
-      --bg: #f7f2ea;
-      --bg-soft: #fffaf2;
-      --card: #ffffff;
-      --text: #201710;
-      --muted: #6d5b4b;
-      --brand: #8b4e2f;
-      --brand-dark: #5b2f1c;
-      --accent: #d89b55;
-      --green: #2f6b4f;
-      --border: rgba(91, 47, 28, 0.14);
-      --shadow: 0 18px 50px rgba(65, 39, 23, 0.12);
-      --radius: 24px;
+      --bg: #fbf7ef;
+      --paper: #fffdf8;
+      --ink: #251710;
+      --muted: #6e5c50;
+      --brand: #7b4427;
+      --brand-2: #b97b42;
+      --gold: #e1ac62;
+      --green: #315f49;
+      --cream: #f4eadb;
+      --line: rgba(66, 38, 24, .13);
+      --shadow: 0 22px 70px rgba(66, 38, 24, .12);
+      --radius: 28px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #fff8ec 0, #f7f2ea 34%, #efe3d4 100%);
-      color: var(--text);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 5%, rgba(225, 172, 98, .28), transparent 30%),
+        radial-gradient(circle at 88% 8%, rgba(123, 68, 39, .18), transparent 28%),
+        linear-gradient(135deg, #fffaf1 0%, var(--bg) 46%, #eee0cf 100%);
       line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(1160px, calc(100% - 36px));
-      margin: 0 auto;
-    }
+    .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
 
     .nav {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 247, 239, .82);
       backdrop-filter: blur(16px);
-      background: rgba(247, 242, 234, 0.78);
-      border-bottom: 1px solid var(--border);
     }
-
     .nav-inner {
-      min-height: 72px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--brand-dark);
-    }
-
-    .logo-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--brand), var(--accent));
-      display: grid;
-      place-items: center;
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(139, 78, 47, 0.24);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
       gap: 22px;
-      font-size: 14px;
-      color: var(--muted);
     }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 46px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 750;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    .brand-wrap { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.04em; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 15px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--gold));
+      color: #fff; box-shadow: 0 12px 28px rgba(123,68,39,.24);
     }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
-      box-shadow: 0 14px 30px rgba(91, 47, 28, .25);
-    }
-
-    .btn-secondary {
-      color: var(--brand-dark);
-      background: rgba(255, 255, 255, 0.72);
-      border-color: var(--border);
-    }
-
-    .hero {
-      padding: 86px 0 70px;
+    .brand-wrap span:last-child {
+      white-space: nowrap;
       overflow: hidden;
+      text-overflow: ellipsis;
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.62);
-      color: var(--brand-dark);
-      font-weight: 760;
-      font-size: 13px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 5px rgba(47, 107, 79, .12);
-    }
-
-    h1, h2, h3 { line-height: 1.08; margin: 0; letter-spacing: -0.045em; }
-
-    h1 {
-      margin-top: 22px;
-      font-size: clamp(42px, 6vw, 76px);
-      color: var(--brand-dark);
-    }
-
-    .hero p {
-      font-size: clamp(17px, 2vw, 21px);
-      color: var(--muted);
-      max-width: 680px;
-      margin: 22px 0 30px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .trust-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .mini-stat {
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.62);
-    }
-
-    .mini-stat strong {
-      display: block;
-      font-size: 22px;
-      color: var(--brand-dark);
-    }
-
-    .mini-stat span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .hero-card-wrap {
-      position: relative;
-    }
-
-    .hero-card-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -42px -36px auto auto;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: rgba(216, 155, 85, 0.22);
-      filter: blur(10px);
-      z-index: -1;
-    }
-
-    .dashboard-card {
-      border-radius: 34px;
-      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,250,242,.94));
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 22px;
-      transform: rotate(1deg);
-    }
-
-    .mock-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .window-dots { display: flex; gap: 7px; }
-    .window-dots span { width: 10px; height: 10px; border-radius: 50%; background: #d7c5b3; }
-
-    .pill {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--green);
-      background: rgba(47,107,79,.1);
-      padding: 7px 10px;
-      border-radius: 999px;
-    }
-
-    .lead-card {
-      border: 1px solid var(--border);
-      background: #fff;
-      border-radius: 22px;
-      padding: 18px;
-      margin-bottom: 14px;
-    }
-
-    .lead-card h3 {
-      font-size: 18px;
-      margin-bottom: 7px;
-    }
-
-    .lead-card p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .stage-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .stage {
-      height: 9px;
-      border-radius: 999px;
-      background: #eadbcc;
-    }
-
-    .stage.active { background: linear-gradient(90deg, var(--brand), var(--accent)); }
-
-    .ai-note {
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 20px;
-      background: #2f1d13;
-      color: #fff3e6;
-      font-size: 14px;
-    }
-
-    section { padding: 72px 0; }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .section-head.center {
-      text-align: center;
-      margin: 0 auto 38px;
-    }
-
-    h2 {
-      font-size: clamp(32px, 4vw, 52px);
-      color: var(--brand-dark);
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 18px;
-      margin: 14px 0 0;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(65, 39, 23, 0.06);
-    }
-
-    .icon {
+    .nav-links { display: flex; align-items: center; gap: 20px; color: var(--muted); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--brand); }
+    .nav-toggle {
+      display: none;
       width: 46px;
       height: 46px;
-      border-radius: 15px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.78);
+      color: var(--brand);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      box-shadow: 0 12px 28px rgba(66,38,24,.08);
+    }
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 46px; padding: 0 20px; border-radius: 999px;
+      border: 1px solid transparent; font-weight: 850;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fff; background: linear-gradient(135deg, var(--brand), #3b2115); box-shadow: 0 16px 34px rgba(59,33,21,.25); }
+    .btn-light { background: rgba(255,255,255,.76); border-color: var(--line); color: var(--brand); }
+
+    .hero { padding: 84px 0 70px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 46px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 8px 12px; border-radius: 999px;
+      border: 1px solid var(--line); background: rgba(255,255,255,.68);
+      color: var(--brand); font-size: 13px; font-weight: 900;
+    }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 6px rgba(49,95,73,.12); }
+    h1, h2, h3 { margin: 0; line-height: 1.06; letter-spacing: -.045em; }
+    h1 { margin-top: 22px; font-size: clamp(42px, 6vw, 76px); color: #321d13; }
+    .lead { margin: 22px 0 30px; max-width: 700px; color: var(--muted); font-size: clamp(17px, 2vw, 21px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .hero-card {
+      position: relative;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,250,242,.72)),
+        radial-gradient(circle at 80% 10%, rgba(225,172,98,.25), transparent 35%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .flow-mini { display: grid; gap: 12px; }
+    .flow-row {
+      display: grid; grid-template-columns: 42px 1fr; gap: 13px; align-items: start;
+      padding: 15px; border: 1px solid var(--line); border-radius: 20px;
+      background: rgba(255,255,255,.7);
+    }
+    .flow-num {
+      width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
+      background: var(--cream); color: var(--brand); font-weight: 950;
+    }
+    .flow-row strong { display: block; color: #321d13; }
+    .flow-row span { color: var(--muted); font-size: 14px; }
+
+    .section { padding: 76px 0; }
+    .section.alt { background: rgba(255,255,255,.42); border-block: 1px solid var(--line); }
+    .section-head { max-width: 840px; margin-bottom: 34px; }
+    .section-kicker { color: var(--brand); font-weight: 950; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; margin-bottom: 10px; }
+    h2 { font-size: clamp(32px, 4vw, 54px); color: #321d13; }
+    .section-head p { color: var(--muted); font-size: 18px; margin: 16px 0 0; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.74);
+      box-shadow: 0 16px 42px rgba(66,38,24,.07);
+    }
+    .icon {
+      width: 48px; height: 48px; border-radius: 17px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(123,68,39,.12), rgba(225,172,98,.22));
+      color: var(--brand); font-size: 24px; margin-bottom: 16px;
+    }
+    .card h3 { font-size: 23px; letter-spacing: -.035em; color: #321d13; margin-bottom: 10px; }
+    .card p { color: var(--muted); margin: 0; }
+    .card ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); }
+    .card li { margin: 7px 0; }
+
+    .journey {
       display: grid;
-      place-items: center;
-      background: rgba(139, 78, 47, 0.10);
-      color: var(--brand-dark);
-      font-size: 22px;
-      margin-bottom: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      counter-reset: step;
     }
-
-    .card h3 {
-      font-size: 21px;
-      color: var(--brand-dark);
-      margin-bottom: 10px;
-    }
-
-    .card p, .card li {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .card ul {
-      padding-left: 20px;
-      margin: 10px 0 0;
-    }
-
-    .workflow {
-      background: rgba(255, 255, 255, 0.52);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-    }
-
     .step {
       position: relative;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 18px;
-      min-height: 150px;
+      padding: 22px;
+      min-height: 210px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255,255,255,.78);
+      overflow: hidden;
     }
-
-    .step strong {
-      display: inline-grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--brand-dark);
-      color: #fff;
-      margin-bottom: 14px;
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      position: absolute; right: 18px; top: 12px;
+      font-size: 44px; font-weight: 950; color: rgba(123,68,39,.11); letter-spacing: -.05em;
     }
+    .step h3 { font-size: 22px; margin-bottom: 10px; position: relative; }
+    .step p { margin: 0; color: var(--muted); position: relative; }
 
-    .step h3 { font-size: 17px; margin-bottom: 8px; }
-    .step p { color: var(--muted); font-size: 14px; margin: 0; }
-
-    .feature-band {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .dark-panel {
-      background: linear-gradient(135deg, #2a190f, #5b2f1c);
-      color: #fff;
-      border-radius: 34px;
-      padding: 34px;
+    .highlight {
+      padding: 30px;
+      border-radius: 32px;
+      border: 1px solid rgba(123,68,39,.22);
+      background:
+        linear-gradient(135deg, rgba(123,68,39,.08), rgba(225,172,98,.14)),
+        rgba(255,255,255,.72);
       box-shadow: var(--shadow);
     }
+    .highlight strong { color: var(--brand); }
 
-    .dark-panel h2 { color: #fff5e9; }
-    .dark-panel p { color: #ead9c5; }
-
-    .check-list {
+    .split {
       display: grid;
-      gap: 12px;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 24px;
+      align-items: start;
     }
+    .list-clean { display: grid; gap: 12px; margin-top: 20px; }
+    .list-item {
+      display: grid; grid-template-columns: 30px 1fr; gap: 12px;
+      padding: 14px; border-radius: 18px; background: rgba(255,255,255,.66); border: 1px solid var(--line);
+    }
+    .tick { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: var(--green); font-weight: 950; }
+    .list-item strong { display: block; color: #321d13; }
+    .list-item span { color: var(--muted); font-size: 14px; }
 
-    .check {
+    .phase-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .phase {
+      border-radius: 30px; overflow: hidden; border: 1px solid var(--line); background: rgba(255,255,255,.8); box-shadow: 0 18px 46px rgba(66,38,24,.08);
+    }
+    .phase-top { padding: 22px; color: #fff; background: linear-gradient(135deg, var(--brand), #3b2115); }
+    .phase:nth-child(2) .phase-top { background: linear-gradient(135deg, var(--green), #223f33); }
+    .phase:nth-child(3) .phase-top { background: linear-gradient(135deg, #8a5b24, #4a2d13); }
+    .phase-top span { display: block; font-weight: 900; opacity: .88; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+    .phase-top h3 { margin-top: 8px; font-size: 25px; color: #fff; }
+    .phase-body { padding: 22px; }
+    .phase-body ul { margin: 0; padding-left: 18px; color: var(--muted); }
+    .phase-body li { margin: 9px 0; }
+
+
+
+    .workflow-strip {
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: rgba(255,255,255,.68);
-      border: 1px solid var(--border);
-      padding: 16px;
-      border-radius: 18px;
-      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
     }
-
-    .check b {
-      color: var(--brand-dark);
+    .workflow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      color: var(--brand);
+      font-weight: 850;
+      font-size: 13px;
     }
-
-    .tick {
-      flex: 0 0 26px;
-      height: 26px;
+    .workflow-note {
+      margin: 28px 0;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+    .workflow-box {
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.74);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(66,38,24,.06);
+    }
+    .workflow-box strong { display: block; color: #321d13; margin-bottom: 4px; }
+    .workflow-box span { color: var(--muted); }
+    .workflow-arrow {
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background: rgba(47,107,79,.12);
-      color: var(--green);
       display: grid;
       place-items: center;
-      font-weight: 900;
+      background: var(--green);
+      color: #fff;
+      font-weight: 950;
+      box-shadow: 0 12px 26px rgba(49,95,73,.18);
     }
 
-    .pricing-card {
-      border: 2px solid rgba(139, 78, 47, .22);
-      background: #fff;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(216,155,85,.18);
-      color: var(--brand-dark);
-      font-weight: 800;
-      font-size: 12px;
-      margin-bottom: 14px;
-    }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.78); }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: #321d13; background: rgba(244,234,219,.72); font-size: 14px; text-transform: uppercase; letter-spacing: .08em; }
+    td { color: var(--muted); }
+    tr:last-child td { border-bottom: 0; }
+    td strong { color: #321d13; }
 
     .cta {
-      text-align: center;
-      background: linear-gradient(135deg, #8b4e2f, #2f1d13);
+      padding: 42px;
+      border-radius: 36px;
       color: #fff;
-      border-radius: 38px;
-      padding: 54px 24px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(225,172,98,.28), transparent 30%),
+        linear-gradient(135deg, #3b2115, var(--brand));
       box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: center;
+    }
+    .cta h2 { color: #fff; }
+    .cta p { color: rgba(255,255,255,.78); font-size: 18px; margin: 14px 0 0; }
+    .cta .btn { background: #fff; color: var(--brand); }
+
+    footer { padding: 34px 0; color: var(--muted); font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 24px; }
+
+    @media (max-width: 1120px) {
+      .nav-inner { position: relative; min-height: 66px; }
+      .brand-wrap { min-width: 0; flex: 1; }
+      .brand-wrap span:last-child { max-width: min(58vw, 520px); }
+      .nav-toggle { display: inline-flex; flex: 0 0 auto; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 10px);
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255,253,248,.96);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 24px 55px rgba(66,38,24,.16);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a {
+        width: 100%;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 12px;
+        border-radius: 14px;
+      }
+      .nav-links a:not(.btn):hover { background: var(--cream); }
+      .nav-links .btn {
+        margin-top: 4px;
+        justify-content: center;
+        min-height: 46px;
+      }
     }
 
-    .cta h2 { color: #fffaf2; }
-    .cta p {
-      color: #f4dec5;
-      max-width: 720px;
-      margin: 16px auto 26px;
-      font-size: 18px;
+    @media (max-width: 980px) {
+      .hero-grid, .split, .cta { grid-template-columns: 1fr; }
+      .grid-3, .journey, .phase-wrap { grid-template-columns: repeat(2, 1fr); }
     }
-
-    .cta .btn-primary {
-      background: #fffaf2;
-      color: var(--brand-dark);
-      box-shadow: none;
-    }
-
-    footer {
-      padding: 30px 0 42px;
-      color: var(--muted);
-      font-size: 14px;
-      text-align: center;
-    }
-
-    @media (max-width: 940px) {
-      .hero-grid, .feature-band, .grid-2 { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr 1fr; }
-      .steps { grid-template-columns: repeat(2, 1fr); }
-      .nav-links { display: none; }
-      .dashboard-card { transform: none; }
-    }
-
-    @media (max-width: 620px) {
-      .container { width: min(100% - 24px, 1160px); }
-      .hero { padding: 54px 0 42px; }
-      section { padding: 48px 0; }
-      .grid-3, .trust-row, .steps { grid-template-columns: 1fr; }
-      .hero-actions { align-items: stretch; }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 24px, 1180px); }
+      .hero { padding: 54px 0 46px; }
+      .section { padding: 54px 0; }
+      .grid-3, .grid-2, .journey, .phase-wrap { grid-template-columns: 1fr; }
+      .workflow-note { grid-template-columns: 1fr; }
+      .workflow-arrow { transform: rotate(90deg); margin: 0 auto; }
+      .cta { padding: 28px; }
+      .hero-actions { flex-direction: column; }
       .btn { width: 100%; }
-      .stage-row { grid-template-columns: repeat(4, 1fr); }
-      .dark-panel, .cta { border-radius: 26px; }
+    }
+
+    @media print {
+      .nav, .hero-actions, .cta .btn { display: none; }
+      body { background: #fff; }
+      .section { padding: 30px 0; }
+      .card, .step, .highlight, .phase, .hero-card, .cta { box-shadow: none; }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="logo" href="#top" aria-label="AI Furniture CRM Home">
-        <span class="logo-mark">✦</span>
-        <span>AI Furniture CRM</span>
+      <a class="brand-wrap" href="#top" aria-label="AI CRM proposal home">
+        <span class="brand-mark">S</span>
+        <span>Starwood Modular · AI CRM Proposal</span>
       </a>
-      <div class="nav-links">
-        <a href="#problems">Problems</a>
-        <a href="#features">Features</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#mvp">MVP</a>
-        <a class="btn btn-primary" href="#contact">Book Demo</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#opportunity">Opportunity</a>
+        <a href="#solution">Solution</a>
+        <a href="#ai">AI Layer</a>
+        <a href="#owner">Owner Benefits</a>
+        <a href="#workflows">Workflows</a>
+        <a href="#impact">Business Impact</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#discussion" class="btn btn-primary">Discussion Points</a>
       </div>
     </div>
   </nav>
 
-  <main id="top">
-    <header class="hero">
-      <div class="container hero-grid">
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Client discussion version</div>
+        <h1>AI CRM & Operations Hub for Modular Interiors</h1>
+        <p class="lead">A practical system to connect enquiry handling, design planning, quotation, manufacturing updates, delivery, installation, and after-sales service — built around the way Starwood Modular already works.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#roadmap">View phased roadmap</a>
+          <a class="btn btn-light" href="#solution">Explore modules</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Proposed workflow summary">
+        <div class="flow-mini">
+          <div class="flow-row">
+            <div class="flow-num">01</div>
+            <div><strong>Capture every enquiry</strong><span>Website, phone, WhatsApp, showroom, referrals, and repeat customers in one CRM.</span></div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-num">02</div>
+            <div><strong>Convert requirements into action</strong><span>AI-assisted summaries for product, size, material, budget, timeline, and next step.</span></div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-num">03</div>
+            <div><strong>Track execution clearly</strong><span>Design approval, production, QC, dispatch, delivery, installation, and final review.</span></div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-num">04</div>
+            <div><strong>Improve customer experience</strong><span>Professional updates, faster follow-ups, better transparency, and stronger after-sales.</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section class="section alt" id="opportunity">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">The opportunity</div>
+        <h2>Turn the existing sales and execution process into a measurable digital workflow.</h2>
+        <p>Starwood Modular already presents a strong brand around modular kitchens, wardrobes, TV units, vanity units, manufacturing quality, and finishing. The next step is to bring the same quality into the internal customer-management and operations process.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">📥</div>
+          <h3>Better enquiry control</h3>
+          <p>Every customer enquiry can be captured, assigned, followed up, and tracked instead of remaining scattered across calls and chats.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📐</div>
+          <h3>Cleaner requirements</h3>
+          <p>Measurements, product choices, finishes, budget, drawings, reference images, and approvals can remain attached to the same customer/order.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🏭</div>
+          <h3>Execution visibility</h3>
+          <p>Management can see where every project stands: design, production, finishing, QC, dispatch, installation, or final review.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Aligned with current process</div>
+        <h2>From consultation to final review — one connected journey.</h2>
+        <p>The proposed CRM does not replace the existing working style. It organizes and strengthens it.</p>
+      </div>
+      <div class="journey">
+        <div class="step">
+          <h3>Initial consultation</h3>
+          <p>Capture enquiry source, customer details, space type, product interest, budget range, and preferred timeline.</p>
+        </div>
+        <div class="step">
+          <h3>Design planning</h3>
+          <p>Store measurements, layouts, material preferences, reference images, design notes, and approval status.</p>
+        </div>
+        <div class="step">
+          <h3>Project execution</h3>
+          <p>Track production stages, internal responsibilities, expected dates, delay risks, and quality-check checkpoints.</p>
+        </div>
+        <div class="step">
+          <h3>Final review</h3>
+          <p>Record delivery, installation photos, pending issues, customer feedback, warranty, and after-sales requests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="solution">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Proposed solution</div>
+        <h2>A CRM designed for modular furniture and interiors — not a generic sales tool.</h2>
+        <p>The system can be built around real modular-interior workflows: kitchen, wardrobe, TV unit, vanity, site measurement, design approval, production, dispatch, and installation.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">👥</div>
+          <h3>Sales CRM</h3>
+          <ul>
+            <li>Lead capture and assignment</li>
+            <li>Hot, warm, cold lead status</li>
+            <li>Follow-up reminders</li>
+            <li>Call and WhatsApp note history</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">🧾</div>
+          <h3>Requirement & quotation</h3>
+          <ul>
+            <li>Product-wise requirements</li>
+            <li>Room size and measurement records</li>
+            <li>Material and finish preferences</li>
+            <li>Quotation drafts and approvals</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">🛠️</div>
+          <h3>Operations tracking</h3>
+          <ul>
+            <li>Design approval tracking</li>
+            <li>Production stage updates</li>
+            <li>QC, dispatch, delivery, installation</li>
+            <li>Delay alerts and pending actions</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>Mobile-friendly worker views</h3>
+          <ul>
+            <li>Works on mobile browser</li>
+            <li>Task update screens for workers</li>
+            <li>Photo upload from site/factory</li>
+            <li>No Play Store dependency initially</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">💬</div>
+          <h3>WhatsApp workflow upgrade</h3>
+          <ul>
+            <li>Use existing WhatsApp as entry point</li>
+            <li>Track enquiry and follow-up status</li>
+            <li>Send quotation and order updates later</li>
+            <li>Reduce missed conversations</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">📊</div>
+          <h3>Management dashboard</h3>
+          <ul>
+            <li>Lead pipeline</li>
+            <li>Pending quotations</li>
+            <li>Delayed projects</li>
+            <li>Sales and execution visibility</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ai">
+    <div class="container split">
+      <div class="section-head">
+        <div class="section-kicker">AI assistance</div>
+        <h2>AI should support the team, not replace the team.</h2>
+        <p>AI can reduce manual typing, create clearer notes, suggest next actions, and highlight risk — while the sales or operations team remains in control.</p>
+        <div class="highlight">
+          <strong>Example:</strong> A long customer call or WhatsApp conversation can be converted into a structured requirement summary: product, size, material, budget, urgency, and recommended next action. The team reviews it before saving.
+        </div>
+      </div>
+      <div class="list-clean">
+        <div class="list-item">
+          <div class="tick">✓</div>
+          <div><strong>AI requirement summary</strong><span>Convert long call notes, voice notes, or WhatsApp messages into clean CRM-ready requirements.</span></div>
+        </div>
+        <div class="list-item">
+          <div class="tick">✓</div>
+          <div><strong>Follow-up message suggestions</strong><span>Draft professional follow-ups based on product interest, quotation status, and last conversation.</span></div>
+        </div>
+        <div class="list-item">
+          <div class="tick">✓</div>
+          <div><strong>Lead scoring</strong><span>Identify promising enquiries based on budget, urgency, product type, and customer intent.</span></div>
+        </div>
+        <div class="list-item">
+          <div class="tick">✓</div>
+          <div><strong>Delay and risk alerts</strong><span>Highlight orders stuck in design, production, finishing, QC, dispatch, or installation stages.</span></div>
+        </div>
+        <div class="list-item">
+          <div class="tick">✓</div>
+          <div><strong>Upsell and repeat business ideas</strong><span>Suggest related products such as wardrobes, TV units, vanity units, storage, or service follow-ups.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Call/WhatsApp to CRM concept</div>
+        <h2>How a long customer conversation becomes a clear requirement.</h2>
+        <p>This is the practical AI flow that can be shown to the sales and design teams.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>What happens</th>
+              <th>CRM output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Conversation</strong></td>
+              <td>Customer discusses needs over call, WhatsApp chat, or voice note.</td>
+              <td>Raw conversation is available for review.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Text capture</strong></td>
+              <td>WhatsApp text is pasted/imported, or call/voice note is transcribed with permission.</td>
+              <td>Conversation becomes readable text.</td>
+            </tr>
+            <tr>
+              <td><strong>3. AI extraction</strong></td>
+              <td>AI identifies product, size, room, material, finish, budget, urgency, and open questions.</td>
+              <td>Structured requirement draft.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Team review</strong></td>
+              <td>Sales/design team checks and corrects the AI draft before final save.</td>
+              <td>Clean customer requirement linked to the lead/order.</td>
+            </tr>
+            <tr>
+              <td><strong>5. Next action</strong></td>
+              <td>System suggests follow-up: site visit, rough estimate, design meeting, or quotation.</td>
+              <td>Clear next step and reminder.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="owner">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Owner benefits from AI</div>
+        <h2>AI gives the owner more control, less leakage, and better business visibility.</h2>
+        <p>The strongest value of AI is not only automation. It helps management see where business is being won, where money is leaking, which orders are at risk, and how the same team can handle more work with better discipline.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">🎯</div>
+          <h3>Focus on serious leads</h3>
+          <p>AI lead scoring can highlight enquiries with stronger buying intent based on product type, budget, urgency, location, and clarity of requirement.</p>
+        </article>
+        <article class="card">
+          <div class="icon">💰</div>
+          <h3>Reduce missed revenue</h3>
+          <p>The owner can see how many enquiries came in, how many were followed up, how many quotations were sent, and where potential orders were lost.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Faster sales response</h3>
+          <p>AI-assisted requirement summaries and quotation drafts help the team respond faster, improving the chance of converting high-value customers.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📊</div>
+          <h3>Daily business dashboard</h3>
+          <p>Management can view new leads, pending follow-ups, pending quotations, confirmed orders, delayed stages, upcoming deliveries, and customer issues in one place.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🚨</div>
+          <h3>Early delay alerts</h3>
+          <p>AI can flag orders stuck in design, production, finishing, QC, dispatch, or installation so issues are handled before the customer escalates.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧠</div>
+          <h3>Better decisions from patterns</h3>
+          <p>AI can identify patterns such as delayed quotations, repeated lost reasons, high-demand products, strong salesperson performance, or common service complaints.</p>
+        </article>
+      </div>
+      <div class="highlight" style="margin-top:28px;">
+        <strong>Owner outcome:</strong> More control over leads, quotations, production, delivery, and customer follow-ups — with less dependency on scattered updates, manual checking, and repeated coordination.
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section alt" id="workflows">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Custom workflow automation</div>
+        <h2>The CRM can be built around Starwood’s exact working style.</h2>
+        <p>Instead of only storing customer data, the system can move work forward automatically. Each important process can have clear triggers, next actions, reminders, approvals, and owner alerts.</p>
+        <div class="workflow-strip">
+          <span class="workflow-pill">Lead capture</span>
+          <span class="workflow-pill">Site visit</span>
+          <span class="workflow-pill">Requirement summary</span>
+          <span class="workflow-pill">Quotation</span>
+          <span class="workflow-pill">Design approval</span>
+          <span class="workflow-pill">Production</span>
+          <span class="workflow-pill">Delivery</span>
+          <span class="workflow-pill">Installation</span>
+          <span class="workflow-pill">After-sales</span>
+          <span class="workflow-pill">Owner alerts</span>
+        </div>
+      </div>
+
+      <div class="workflow-note">
+        <div class="workflow-box">
+          <strong>When something important happens</strong>
+          <span>New enquiry, site visit request, quotation delay, design approval, production delay, dispatch, installation, or complaint.</span>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-box">
+          <strong>The system performs the next step</strong>
+          <span>Assigns work, creates a task, sends a reminder, drafts a message, requests approval, or alerts the right person.</span>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">📥</div>
+          <h3>Lead enquiry workflow</h3>
+          <p>Every enquiry can be captured from website, existing WhatsApp, phone, showroom, referral, dealer, architect, or campaign source.</p>
+          <ul>
+            <li>Classify interest: Kitchen, Wardrobe, TV Unit, Vanity, or full interior.</li>
+            <li>Assign to the right sales person.</li>
+            <li>Create first follow-up task automatically.</li>
+            <li>Notify owner/manager for high-budget or urgent leads.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📐</div>
+          <h3>Site visit & measurement workflow</h3>
+          <p>Once a lead needs measurement, the system can create a task for the site team and keep the sales/design team updated.</p>
+          <ul>
+            <li>Schedule site visit and assign measurement person.</li>
+            <li>Send customer confirmation/reminder.</li>
+            <li>Upload room photos, sizes, and notes from mobile.</li>
+            <li>Alert manager if measurements are not uploaded on time.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧠</div>
+          <h3>AI requirement workflow</h3>
+          <p>Long call notes or WhatsApp discussions can be converted into a clean CRM requirement after salesperson review.</p>
+          <ul>
+            <li>Extract product, size, material, finish, budget, urgency, and next action.</li>
+            <li>Highlight missing details such as exact size, appliance list, or material choice.</li>
+            <li>Create quotation or site visit task from the requirement.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧾</div>
+          <h3>Quotation workflow</h3>
+          <p>Quotation delay is a major revenue leakage point. The CRM can make quotation creation and follow-up more disciplined.</p>
+          <ul>
+            <li>Create quotation task when requirement is complete.</li>
+            <li>Generate quotation draft using product, size, material, finish, and budget.</li>
+            <li>Require approval for high discounts.</li>
+            <li>Create follow-up reminder after quote is shared.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🎨</div>
+          <h3>Design approval workflow</h3>
+          <p>Design changes and approvals can be tracked clearly before production starts.</p>
+          <ul>
+            <li>Create design task after order confirmation.</li>
+            <li>Upload 2D/3D design files and revision notes.</li>
+            <li>Track customer approval or revision request.</li>
+            <li>Lock approved design version before production.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">💳</div>
+          <h3>Advance & balance payment workflow</h3>
+          <p>The CRM can help management track advance, balance, and dispatch readiness.</p>
+          <ul>
+            <li>Generate payment request after quotation acceptance.</li>
+            <li>Record advance payment and confirm order.</li>
+            <li>Alert sales/accounts for pending balance before dispatch.</li>
+            <li>Improve cashflow visibility for the owner.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🏭</div>
+          <h3>Production workflow</h3>
+          <p>After design approval, production can move through clear stages with owner and manager visibility.</p>
+          <ul>
+            <li>Create production job after approved design.</li>
+            <li>Track cutting, assembly, edge banding, finishing, QC, packing, and dispatch.</li>
+            <li>Alert production head if any stage is delayed.</li>
+            <li>Create rework task if QC fails.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>Worker mobile workflow</h3>
+          <p>Factory workers, measurement team, delivery staff, and installers can update work from mobile-friendly screens/PWA.</p>
+          <ul>
+            <li>See today’s assigned tasks.</li>
+            <li>Mark stage complete from mobile.</li>
+            <li>Upload work photos or issue photos.</li>
+            <li>Trigger next team’s task automatically.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🚚</div>
+          <h3>Delivery workflow</h3>
+          <p>After QC, the dispatch and delivery process can be organized instead of being managed only through calls.</p>
+          <ul>
+            <li>Create dispatch task after QC pass.</li>
+            <li>Schedule delivery and notify team/customer.</li>
+            <li>Track packed, dispatched, delivered, and pending status.</li>
+            <li>Alert owner if delivery commitment is at risk.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🛠️</div>
+          <h3>Installation workflow</h3>
+          <p>Installation can be assigned, tracked, and closed with proof instead of only verbal updates.</p>
+          <ul>
+            <li>Assign installer after delivery is scheduled.</li>
+            <li>Installer views task on mobile.</li>
+            <li>Upload completion photos and pending issue notes.</li>
+            <li>Mark project as completed after final review.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🛡️</div>
+          <h3>After-sales service workflow</h3>
+          <p>Complaints, warranty, and service requests can be handled professionally with ticket-style tracking.</p>
+          <ul>
+            <li>Create service ticket from customer complaint.</li>
+            <li>Check warranty or paid service status.</li>
+            <li>Assign technician and schedule visit.</li>
+            <li>Close ticket with photos and customer feedback.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🔔</div>
+          <h3>Owner alert workflow</h3>
+          <p>The owner does not need to ask everyone for updates. The system can alert only when attention is needed.</p>
+          <ul>
+            <li>High-value lead received.</li>
+            <li>Quotation delayed or follow-up missed.</li>
+            <li>Order stuck in production.</li>
+            <li>Payment pending, delivery at risk, or complaint unresolved.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="highlight" style="margin-top:28px;">
+        <strong>Workflow outcome:</strong> Every important step — enquiry, quotation, design, payment, production, delivery, installation, and service — can become trackable, assignable, and measurable. This reduces dependency on memory, scattered WhatsApp chats, and repeated manual follow-ups.
+      </div>
+
+      <div class="section-head" style="margin-top:54px;">
+        <div class="section-kicker">AI-powered workflow examples</div>
+        <h2>AI can make workflows smarter, not just automatic.</h2>
+        <p>The AI layer can read customer context, detect risk, suggest next actions, and help management understand patterns.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>AI workflow</th>
+              <th>Example trigger</th>
+              <th>Business benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hot lead detection</strong></td>
+              <td>Customer asks for full home interior, higher budget, and urgent timeline.</td>
+              <td>Owner/manager is alerted and a senior salesperson can handle the lead.</td>
+            </tr>
+            <tr>
+              <td><strong>Missing detail detection</strong></td>
+              <td>Sales note says “need kitchen, white finish, urgent” but size, budget, material, and appliance list are missing.</td>
+              <td>CRM prompts salesperson to complete missing fields before quotation/design.</td>
+            </tr>
+            <tr>
+              <td><strong>Delay prediction</strong></td>
+              <td>Order promised in 20 days, but cutting/production has not started on time.</td>
+              <td>Manager can act early before delivery commitment is missed.</td>
+            </tr>
+            <tr>
+              <td><strong>Lost lead analysis</strong></td>
+              <td>Lead marked lost after quotation or follow-up.</td>
+              <td>Monthly insights show whether leads are lost due to price, slow quotation, no follow-up, competitor, or budget mismatch.</td>
+            </tr>
+            <tr>
+              <td><strong>Upsell suggestion</strong></td>
+              <td>Customer is buying a modular kitchen.</td>
+              <td>AI can suggest tall unit, crockery unit, breakfast counter, wardrobe, TV unit, or vanity add-ons.</td>
+            </tr>
+            <tr>
+              <td><strong>Customer message drafting</strong></td>
+              <td>Order is delayed, design is ready, quotation is pending, or installation is scheduled.</td>
+              <td>AI drafts a polite message that the salesperson can review and send.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="roadmap">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Phased implementation</div>
+        <h2>Start with the most useful system first, then add automation after adoption.</h2>
+        <p>This keeps the first version practical and helps the team adopt the system without changing everything at once.</p>
+      </div>
+      <div class="phase-wrap">
+        <article class="phase">
+          <div class="phase-top"><span>Phase 1</span><h3>Core CRM + mobile-friendly operations</h3></div>
+          <div class="phase-body">
+            <ul>
+              <li>Lead and customer management</li>
+              <li>Requirement capture</li>
+              <li>Quotation workflow</li>
+              <li>Order and production stage tracking</li>
+              <li>Mobile worker screens/PWA</li>
+              <li>Basic AI summaries and follow-up suggestions</li>
+            </ul>
+          </div>
+        </article>
+        <article class="phase">
+          <div class="phase-top"><span>Phase 2</span><h3>Automation, AI and customer updates</h3></div>
+          <div class="phase-body">
+            <ul>
+              <li>CRM-connected WhatsApp workflows</li>
+              <li>Customer order status updates</li>
+              <li>Advanced reports and dashboards</li>
+              <li>AI lead scoring</li>
+              <li>Delay/risk alerts</li>
+              <li>After-sales and warranty tracking</li>
+            </ul>
+          </div>
+        </article>
+        <article class="phase">
+          <div class="phase-top"><span>Optional add-on</span><h3>Dedicated worker app</h3></div>
+          <div class="phase-body">
+            <ul>
+              <li>Consider after team adoption</li>
+              <li>Useful for larger field teams</li>
+              <li>Can support task lists and uploads</li>
+              <li>Can be Android-first</li>
+              <li>Not required to start</li>
+              <li>Commercials can be evaluated separately</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="impact">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Business impact & cost savings</div>
+        <h2>Designed to reduce operational leakage and help the same team handle more business.</h2>
+        <p>The goal is not to replace people. The goal is to reduce repetitive manual work, prevent missed opportunities, improve coordination, and give management better visibility across the complete customer journey.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">📥</div>
+          <h3>Reduce missed leads</h3>
+          <p>Every enquiry from website, WhatsApp, calls, showroom visits, referrals, dealers, and architects can be captured and followed up. Even a small reduction in missed leads can directly protect revenue.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⏱️</div>
+          <h3>Save sales team time</h3>
+          <p>AI-assisted summaries, follow-up reminders, and quotation workflows reduce repeated typing, manual tracking, and dependency on memory or scattered chats.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧾</div>
+          <h3>Faster quotations</h3>
+          <p>Product category, size, material, finish, budget, and timeline can be organized quickly so the team can respond faster and move serious customers toward approval.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧩</div>
+          <h3>Less coordination gap</h3>
+          <p>Sales, design, production, delivery, and installation teams can work from the same order record instead of relying only on calls, screenshots, and forwarded messages.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🔁</div>
+          <h3>Reduce rework and mistakes</h3>
+          <p>Clear requirement capture and approval tracking help reduce confusion around size, finish, material, layout, and customer expectations before production begins.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📞</div>
+          <h3>Lower repetitive support effort</h3>
+          <p>Order-stage tracking and planned customer updates reduce repeated calls such as “what is my order status?” and improve the customer experience.</p>
+        </article>
+      </div>
+      <div class="highlight" style="margin-top:28px;">
+        <strong>Business outcome:</strong> Starwood Modular can manage more enquiries, quotations, production updates, and customer follow-ups without increasing operational overhead at the same pace.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="discussion">
+    <div class="container">
+      <div class="cta">
         <div>
-          <span class="eyebrow"><span class="dot"></span>Built for furniture manufacturers, dealers & custom studios</span>
-          <h1>AI-infused CRM that connects sales, design, production and delivery.</h1>
-          <p>
-            A furniture business operating system that captures leads, prepares quotations, tracks custom orders, sends WhatsApp updates, and helps your team close more deals with less manual work.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Request a Demo</a>
-            <a href="#features" class="btn btn-secondary">View Features</a>
+          <div class="section-kicker" style="color:#eecb96">Discussion points</div>
+          <h2>Next step: map Starwood’s exact workflow before final scope.</h2>
+          <p>During discussion, we can confirm lead sources, quotation process, site measurement flow, design approvals, payment checkpoints, production stages, delivery, installation, service workflow, owner alerts, and the best Phase 1 scope.</p>
+        </div>
+        <div class="list-clean">
+          <div class="list-item">
+            <div class="tick">1</div>
+            <div><strong>Current lead sources</strong><span>Website, WhatsApp, phone, showroom, referral, dealer, architect.</span></div>
           </div>
-          <div class="trust-row">
-            <div class="mini-stat"><strong>360°</strong><span>Customer & order visibility</span></div>
-            <div class="mini-stat"><strong>AI</strong><span>Follow-up and quotation assistant</span></div>
-            <div class="mini-stat"><strong>Live</strong><span>Production and delivery tracking</span></div>
+          <div class="list-item">
+            <div class="tick">2</div>
+            <div><strong>Custom workflows</strong><span>Lead, site visit, quotation, design approval, payment, production, delivery, installation, service, owner alerts.</span></div>
           </div>
-        </div>
-
-        <div class="hero-card-wrap" aria-label="CRM dashboard preview">
-          <div class="dashboard-card">
-            <div class="mock-top">
-              <div class="window-dots"><span></span><span></span><span></span></div>
-              <span class="pill">High priority lead</span>
-            </div>
-            <div class="lead-card">
-              <h3>Modular Kitchen Enquiry</h3>
-              <p>Customer wants site visit, matte finish, soft-close fittings, budget ₹3.5L–₹4.2L.</p>
-              <div class="stage-row"><span class="stage active"></span><span class="stage active"></span><span class="stage"></span><span class="stage"></span></div>
-            </div>
-            <div class="lead-card">
-              <h3>Custom Wardrobe Order #248</h3>
-              <p>Design approved. Material procurement done. Current stage: Cutting & assembly.</p>
-              <div class="stage-row"><span class="stage active"></span><span class="stage active"></span><span class="stage active"></span><span class="stage"></span></div>
-            </div>
-            <div class="ai-note">
-              <b>AI suggestion:</b> Send quotation follow-up today and recommend matching TV unit + wall panel package.
-            </div>
+          <div class="list-item">
+            <div class="tick">3</div>
+            <div><strong>Team access</strong><span>Admin, sales, designer, production, delivery, installer, management.</span></div>
           </div>
+          <a class="btn" href="#top">Back to top</a>
         </div>
       </div>
-    </header>
-
-    <section id="problems">
-      <div class="container">
-        <div class="section-head center">
-          <h2>Furniture businesses do not need a generic CRM.</h2>
-          <p>They need a system that understands enquiries, measurements, materials, quotations, production stages, delivery and after-sales service.</p>
-        </div>
-        <div class="grid-3">
-          <div class="card"><div class="icon">💬</div><h3>Leads get scattered</h3><p>Enquiries come from WhatsApp, website, showroom, Instagram, referrals and calls, but many are not tracked properly.</p></div>
-          <div class="card"><div class="icon">🧾</div><h3>Quotations take time</h3><p>Custom size, material, finish and fittings make pricing slow and dependent on manual coordination.</p></div>
-          <div class="card"><div class="icon">🏭</div><h3>Production updates are unclear</h3><p>Sales, design, factory and delivery teams often work on different information, causing delays and customer confusion.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="features">
-      <div class="container">
-        <div class="section-head">
-          <h2>One platform for the full furniture sales journey.</h2>
-          <p>From first enquiry to installation and after-sales support, every step is organized and assisted by AI.</p>
-        </div>
-        <div class="grid-3">
-          <div class="card"><div class="icon">🎯</div><h3>AI Lead Scoring</h3><p>Automatically identify hot, warm and cold leads based on budget, urgency, product type, location and interactions.</p></div>
-          <div class="card"><div class="icon">🤖</div><h3>AI Follow-up Assistant</h3><p>Generate professional follow-up messages for WhatsApp, email or calls, personalized to each customer enquiry.</p></div>
-          <div class="card"><div class="icon">📐</div><h3>Requirement Capture</h3><p>Store room measurements, material preferences, finishes, reference images, site visit notes and approval status.</p></div>
-          <div class="card"><div class="icon">📄</div><h3>Quotation Generator</h3><p>Create structured estimates and PDF quotations based on product, size, material, finish, fittings and discounts.</p></div>
-          <div class="card"><div class="icon">🔁</div><h3>Order Tracking</h3><p>Track each order from design approval to material purchase, cutting, assembly, polishing, QC, dispatch and delivery.</p></div>
-          <div class="card"><div class="icon">📲</div><h3>Customer Updates</h3><p>Send automatic status updates through WhatsApp, SMS or email so customers do not need to repeatedly ask for progress.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="workflow" id="workflow">
-      <div class="container">
-        <div class="section-head center">
-          <h2>Designed around the real furniture workflow.</h2>
-          <p>A simple stage-wise flow for custom furniture, modular furniture, showroom sales and dealer orders.</p>
-        </div>
-        <div class="steps">
-          <div class="step"><strong>1</strong><h3>Lead Captured</h3><p>Website, WhatsApp, showroom, call or referral.</p></div>
-          <div class="step"><strong>2</strong><h3>Requirement</h3><p>Product, size, room, material, finish and budget.</p></div>
-          <div class="step"><strong>3</strong><h3>Quotation</h3><p>AI-assisted estimate and approval workflow.</p></div>
-          <div class="step"><strong>4</strong><h3>Production</h3><p>Factory stages, delay alerts and task ownership.</p></div>
-          <div class="step"><strong>5</strong><h3>Delivery</h3><p>Dispatch, installation, customer confirmation.</p></div>
-          <div class="step"><strong>6</strong><h3>After-Sales</h3><p>Warranty, service requests and repeat campaigns.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container feature-band">
-        <div class="dark-panel">
-          <h2>AI that saves time where your team loses it daily.</h2>
-          <p>The goal is not to replace your sales or production team. The goal is to give them a smart assistant that helps them respond faster, remember follow-ups, avoid confusion and improve customer trust.</p>
-          <a href="#contact" class="btn btn-primary">Discuss Implementation</a>
-        </div>
-        <div class="check-list">
-          <div class="check"><span class="tick">✓</span><span><b>Summarize long customer chats</b><br>Convert messy WhatsApp conversations into clean requirements.</span></div>
-          <div class="check"><span class="tick">✓</span><span><b>Detect delayed orders</b><br>Highlight orders stuck in one stage for too long.</span></div>
-          <div class="check"><span class="tick">✓</span><span><b>Recommend upsells</b><br>Suggest matching bedside tables, wall panels, wardrobes, mattresses and more.</span></div>
-          <div class="check"><span class="tick">✓</span><span><b>Answer order-status queries</b><br>Let customers check progress through chatbot or WhatsApp.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="mvp">
-      <div class="container">
-        <div class="section-head center">
-          <h2>Suggested MVP for quick launch.</h2>
-          <p>Start focused. Launch the most useful version first, then expand into inventory, vendor management, AR preview and advanced production planning.</p>
-        </div>
-        <div class="grid-2">
-          <div class="card pricing-card">
-            <span class="tag">Phase 1 MVP</span>
-            <h3>Core CRM + AI Assistant</h3>
-            <ul>
-              <li>Lead management and assignment</li>
-              <li>Customer requirement capture</li>
-              <li>AI follow-up suggestions</li>
-              <li>Quotation generation</li>
-              <li>Order stage tracking</li>
-              <li>WhatsApp/email customer updates</li>
-              <li>Admin dashboard and reports</li>
-            </ul>
-          </div>
-          <div class="card">
-            <span class="tag">Phase 2 Expansion</span>
-            <h3>Advanced Business Automation</h3>
-            <ul>
-              <li>Inventory and material tracking</li>
-              <li>Vendor purchase tracking</li>
-              <li>Factory worker task assignment</li>
-              <li>Delivery route planning</li>
-              <li>Customer support chatbot</li>
-              <li>Dealer/distributor portal</li>
-              <li>3D/AR product preview integration</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="cta">
-          <h2>Turn your furniture business into a smarter sales and production engine.</h2>
-          <p>We can build a custom AI-infused CRM around your exact process — showroom sales, custom orders, modular furniture, production tracking, delivery and after-sales service.</p>
-          <a class="btn btn-primary" href="mailto:your-email@example.com?subject=AI%20Furniture%20CRM%20Demo%20Request">Book a Demo</a>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <div class="container">
-      © 2026 AI Furniture CRM Pitch. Replace this text with your company name before publishing.
+    <div class="container footer-inner">
+      <span>AI CRM & Operations Hub Proposal · Starwood Modular</span>
+      <span>Client-facing discussion page · Commercials can be shared separately</span>
     </div>
   </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    function closeMenu() {
+      navToggle.classList.remove('is-open');
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open navigation menu');
+    }
+
+    function toggleMenu() {
+      const isOpen = navLinks.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    }
+
+    navToggle.addEventListener('click', toggleMenu);
+    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.nav')) closeMenu();
+    });
+  </script>
 </body>
 </html>
